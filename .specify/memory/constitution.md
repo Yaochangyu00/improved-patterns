@@ -1,50 +1,141 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+同步影响报告 (Sync Impact Report)
+================================================================================
+版本变更: TEMPLATE → 1.0.0
+修改原则:
+  - 新增: I. 可测试性优先
+  - 新增: II. 最小可行产品 (MVP)
+  - 新增: III. 简洁设计,拒绝过度工程
+  - 新增: IV. 简体中文优先
+  - 新增: V. 高质量标准
 
-## Core Principles
+需要更新的模板:
+  - ✅ .specify/templates/plan-template.md (已验证)
+  - ✅ .specify/templates/spec-template.md (已验证)
+  - ✅ .specify/templates/tasks-template.md (已验证)
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+后续待办事项: 无
+================================================================================
+-->
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+# SpecKit 项目宪章
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+## 核心原则
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### I. 可测试性优先
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+所有功能必须可测试。每个特性在实现之前必须定义清晰的验收场景。
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+**强制要求**:
+- 每个用户故事必须包含独立的测试场景
+- 测试场景必须使用 Given-When-Then 格式
+- 功能实现前必须明确如何验证其正确性
+- 所有边界条件和错误场景必须有对应的测试覆盖
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+**理由**: 可测试性是质量的基础。不可测试的代码无法验证,不可验证的代码无法信任。
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### II. 最小可行产品 (MVP)
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+优先交付核心价值,避免一次性构建完整系统。
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+**强制要求**:
+- 用户故事必须按优先级排序 (P1, P2, P3...)
+- P1 用户故事必须能够独立交付和演示
+- 每个用户故事必须可以独立测试和部署
+- 先实现 P1 并验证价值,再考虑 P2/P3
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+**理由**: MVP 方法减少浪费,快速验证假设,及早获得用户反馈。
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### III. 简洁设计,拒绝过度工程
+
+从简单方案开始,仅在有明确需求时才增加复杂度。
+
+**强制要求**:
+- 默认选择最简单的可行方案
+- 任何增加复杂度的决策必须在文档中明确说明理由
+- 遵循 YAGNI 原则 (You Aren't Gonna Need It)
+- 在 plan.md 的复杂度跟踪表中记录所有复杂性决策
+
+**理由**: 过度设计浪费时间,增加维护成本,降低可理解性。简单的系统更易于修改和扩展。
+
+### IV. 简体中文优先
+
+所有文档、注释、提交信息必须使用简体中文。
+
+**强制要求**:
+- 所有 .md 文档使用简体中文
+- 代码注释使用简体中文
+- git commit 消息使用简体中文
+- 用户故事和需求描述使用简体中文
+- 仅在必要时 (如代码标识符、技术术语) 使用英文
+
+**理由**: 统一语言降低沟通成本,提高团队协作效率。
+
+### V. 高质量标准
+
+质量不可妥协,但必须在 MVP 框架内实现。
+
+**强制要求**:
+- 代码必须通过静态检查 (linting)
+- 关键路径必须有测试覆盖
+- 错误处理必须明确且可追踪
+- 日志记录必须结构化且有意义
+- 性能目标必须在需求中明确定义
+
+**理由**: 高质量代码减少技术债务,降低长期维护成本,提升用户信任。
+
+## 开发流程
+
+### 需求定义阶段
+
+1. 使用 `/speckit.specify` 创建特性规范 (spec.md)
+2. 确保每个用户故事独立可测且按优先级排序
+3. 使用 `/speckit.clarify` 识别并解决模糊需求
+
+### 设计阶段
+
+1. 使用 `/speckit.plan` 生成实现计划
+2. 在技术上下文中明确说明简单方案选择理由
+3. 任何复杂度增加必须在"复杂度跟踪"表中说明
+
+### 实现阶段
+
+1. 使用 `/speckit.tasks` 生成任务列表
+2. 按用户故事优先级实现 (P1 → P2 → P3)
+3. 每个故事完成后独立验证
+4. 使用 `/speckit.implement` 执行任务
+
+### 验证阶段
+
+1. 使用 `/speckit.analyze` 进行跨构件一致性检查
+2. 验证所有 P1 用户故事的测试场景
+3. 在继续 P2 之前确认 P1 可独立演示
+
+## 治理规则
+
+### 修订流程
+
+1. 宪章修订必须通过文档化提案
+2. 重大修订需要在 git commit 中明确说明影响
+3. 版本号遵循语义化版本规则:
+   - 主版本 (MAJOR): 移除或重新定义核心原则
+   - 次版本 (MINOR): 新增原则或章节
+   - 修订版本 (PATCH): 措辞澄清或格式修正
+
+### 合规性检查
+
+- 所有 Pull Request 必须验证是否符合宪章原则
+- 在 plan.md 的"宪章检查"部分验证合规性
+- 任何复杂度增加必须在"复杂度跟踪"表中说明理由
+- 代码审查必须检查是否违反 YAGNI 原则
+
+### 冲突解决
+
+- 当原则之间产生冲突时,优先级顺序为:
+  1. 可测试性优先
+  2. 最小可行产品 (MVP)
+  3. 简洁设计,拒绝过度工程
+  4. 高质量标准
+  5. 简体中文优先
+
+**版本**: 1.0.0 | **批准日期**: 2025-11-20 | **最后修订日期**: 2025-11-20

@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Patterns Configuration Schema",
+  "description": "JSON Schema for patterns.json configuration file",
+  "type": "object",
+  "properties": {
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name_en", "name_zh", "category", "code_path", "doc_path", "test_path", "description_zh"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z_]+$"
+          },
+          "name_en": {
+            "type": "string"
+          },
+          "name_zh": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["creational", "structural", "behavioral", "other"]
+          },
+          "code_path": {
+            "type": "string"
+          },
+          "doc_path": {
+            "type": "string"
+          },
+          "test_path": {
+            "type": "string"
+          },
+          "description_zh": {
+            "type": "string"
+          },
+          "keywords_zh": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "related_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "example": {
+            "type": "object",
+            "properties": {
+              "entry_function": {
+                "type": "string"
+              },
+              "has_interactive": {
+                "type": "boolean"
+              },
+              "dependencies": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

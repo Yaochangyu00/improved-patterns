@@ -1,0 +1,140 @@
+{
+  "patterns": [
+    {
+      "id": "singleton",
+      "name_en": "Singleton",
+      "name_zh": "单例模式",
+      "category": "creational",
+      "code_path": "patterns/creational/singleton.py",
+      "doc_path": "docs/creational/singleton.md",
+      "test_path": "tests/test_creational/test_singleton.py",
+      "description_zh": "确保一个类只有一个实例,并提供全局访问点",
+      "keywords_zh": ["单例", "全局", "唯一实例"],
+      "related_patterns": ["borg"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    },
+    {
+      "id": "factory",
+      "name_en": "Factory",
+      "name_zh": "工厂模式",
+      "category": "creational",
+      "code_path": "patterns/creational/factory.py",
+      "doc_path": "docs/creational/factory.md",
+      "test_path": "tests/test_creational/test_factory.py",
+      "description_zh": "定义创建对象的接口,让子类决定实例化哪个类",
+      "keywords_zh": ["工厂", "创建", "多态"],
+      "related_patterns": ["abstract_factory", "singleton"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    },
+    {
+      "id": "observer",
+      "name_en": "Observer",
+      "name_zh": "观察者模式",
+      "category": "behavioral",
+      "code_path": "patterns/behavioral/observer.py",
+      "doc_path": "docs/behavioral/observer.md",
+      "test_path": "tests/test_behavioral/test_observer.py",
+      "description_zh": "定义对象间的一对多依赖关系,当一个对象状态改变时,所有依赖它的对象都会收到通知",
+      "keywords_zh": ["观察者", "事件", "发布订阅"],
+      "related_patterns": ["pubsub", "mediator"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    },
+    {
+      "id": "abstract_factory",
+      "name_en": "Abstract Factory",
+      "name_zh": "抽象工厂模式",
+      "category": "creational",
+      "code_path": "patterns/creational/abstract_factory.py",
+      "doc_path": "docs/creational/abstract_factory.md",
+      "test_path": "tests/test_creational/test_abstract_factory.py",
+      "description_zh": "提供一个创建一系列相关或相互依赖对象的接口",
+      "keywords_zh": ["抽象工厂", "产品族", "工厂"],
+      "related_patterns": ["factory", "singleton"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    },
+    {
+      "id": "builder",
+      "name_en": "Builder",
+      "name_zh": "建造者模式",
+      "category": "creational",
+      "code_path": "patterns/creational/builder.py",
+      "doc_path": "docs/creational/builder.md",
+      "test_path": "tests/test_creational/test_builder.py",
+      "description_zh": "将复杂对象的构建与表示分离,使同样的构建过程可以创建不同的表示",
+      "keywords_zh": ["建造者", "构建", "分步"],
+      "related_patterns": ["factory", "abstract_factory"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    },
+    {
+      "id": "prototype",
+      "name_en": "Prototype",
+      "name_zh": "原型模式",
+      "category": "creational",
+      "code_path": "patterns/creational/prototype.py",
+      "doc_path": "docs/creational/prototype.md",
+      "test_path": "tests/test_creational/test_prototype.py",
+      "description_zh": "用原型实例指定创建对象的种类,通过复制这些原型创建新对象",
+      "keywords_zh": ["原型", "克隆", "复制"],
+      "related_patterns": ["factory", "singleton"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    },
+    {
+      "id": "pool",
+      "name_en": "Object Pool",
+      "name_zh": "对象池模式",
+      "category": "creational",
+      "code_path": "patterns/creational/pool.py",
+      "doc_path": "docs/creational/pool.md",
+      "test_path": "tests/test_creational/test_pool.py",
+      "description_zh": "通过对象复用避免频繁创建和销毁的开销",
+      "keywords_zh": ["对象池", "复用", "性能"],
+      "related_patterns": ["singleton", "factory"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    },
+    {
+      "id": "lazy_evaluation",
+      "name_en": "Lazy Evaluation",
+      "name_zh": "惰性求值模式",
+      "category": "creational",
+      "code_path": "patterns/creational/lazy_evaluation.py",
+      "doc_path": "docs/creational/lazy_evaluation.md",
+      "test_path": "tests/test_creational/test_lazy_evaluation.py",
+      "description_zh": "延迟计算直到真正需要结果时,避免不必要的计算",
+      "keywords_zh": ["惰性", "延迟", "性能优化"],
+      "related_patterns": ["proxy", "singleton"],
+      "example": {
+        "entry_function": "main",
+        "has_interactive": false,
+        "dependencies": []
+      }
+    }
+  ]
+}

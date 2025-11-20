@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "name": "creational",
+      "display_name_zh": "创建型模式",
+      "description_zh": "关注对象创建机制,通过控制创建过程来解决问题"
+    },
+    {
+      "name": "structural",
+      "display_name_zh": "结构型模式",
+      "description_zh": "关注类和对象的组合,通过组合来获得新功能"
+    },
+    {
+      "name": "behavioral",
+      "display_name_zh": "行为型模式",
+      "description_zh": "关注对象之间的通信,明确对象之间的职责分配"
+    },
+    {
+      "name": "other",
+      "display_name_zh": "其他模式",
+      "description_zh": "其他有用的设计模式和编程技巧"
+    }
+  ]
+}
